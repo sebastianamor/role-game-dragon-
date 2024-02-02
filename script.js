@@ -83,6 +83,12 @@ const weapons = [
       "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
       "button functions": [restart, restart, restart], 
       text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
+    },
+    {
+      name: "easter egg",
+      "button text": ["2", "8", "Go to town square?"],
+      "button functions": [pickTwo, pickEight, goTown],
+      text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
     }
   ];
 
@@ -101,4 +107,27 @@ function update(location) {
   button2.onclick = location["button functions"][1];
   button3.onclick = location["button functions"][2];
   text.innerText = location.text;
+}
+
+function goTown() {
+  update(locations[0]);
+}
+
+function goStore() {
+  update(locations[1]);
+}
+
+function goCave() {
+  update(locations[2]);
+}
+
+function buyHealth() {
+  if (gold >= 10) {
+    gold -= 10;
+    health += 10;
+    goldText.innerText = gold;
+    healthText.innerText = health;
+  } else {
+    text.innerText = "You do not have enough gold to buy health.";
+  }
 }
