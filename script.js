@@ -42,51 +42,51 @@ const monsters = [
 const locations = [
   {
     name: "town square",
-    "button text": ["Go to store", "Go to cave", "Fight dragon"],
+    "button text": ["店に行く", "洞窟に行く", "ドラゴンと戦う"],
     "button functions": [goStore, goCave, fightDragon],
-    text: "You are in the town square. You see a sign that says \"Store\"."
+    text: " あなたは町の広場にいます。という看板が見えます\"Store\"."
   },
   {
     name: "store",
-    "button text": ["Buy 10 health (10 gold)", "Buy weapon (30 gold)", "Go to town square"],
+    "button text": ["体力を10(10ゴールド)購入","武器(30ゴールド)を購入","町の広場に行く"],
     "button functions": [buyHealth, buyWeapon, goTown],
-    text: "You enter the store."
+    text: "店内に入る."
   },
   {
     name: "cave",
-    "button text": ["Fight slime", "Fight fanged beast", "Go to town square"],
+    "button text": ['スライムと戦う','牙獣と戦う','町の広場に行く'],
     "button functions": [fightSlime, fightBeast, goTown],
-    text: "You enter the cave. You see some monsters."
+    text: "洞窟に入ります。モンスターが何人か見えます。"
   },
   {
     name: "fight",
-    "button text": ["Attack", "Dodge", "Run"],
+    "button text": ["攻撃","回避","逃げる"],
     "button functions": [attack, dodge, goTown],
-    text: "You are fighting a monster."
+    text: "あなたはモンスターと戦っています。"
   },
   {
     name: "kill monster",
-    "button text": ["Go to town square", "Go to town square", "Go to town square"],
+    "button text": ["町の広場に行く","町の広場に行く","町の広場に行く"],
     "button functions": [goTown, goTown, easterEgg],
-    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.'
+    text: '怪物は「アーグ!」と叫びながら死ぬ。経験値を獲得し、ゴールドを見つけます。'
   },
   {
     name: "lose",
-    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"],
+    "button text": ["リプレイ?" ,"リプレイ? ","リプレイ?"],
     "button functions": [restart, restart, restart],
-    text: "You die. ☠️"
+    text: "あなたは死ぬ。☠️"
   },
   { 
     name: "win", 
-    "button text": ["REPLAY?", "REPLAY?", "REPLAY?"], 
+    "button text": ["リプレイ?" ,"リプレイ? ","リプレイ?"], 
     "button functions": [restart, restart, restart], 
-    text: "You defeat the dragon! YOU WIN THE GAME! 🎉" 
+    text: "ドラゴンを倒せ!あなたはゲームに勝ちます! 🎉" 
   },
   {
     name: "easter egg",
-    "button text": ["2", "8", "Go to town square?"],
+    "button text": ["2","8","町の広場に行く?"],
     "button functions": [pickTwo, pickEight, goTown],
-    text: "You find a secret game. Pick a number above. Ten numbers will be randomly chosen between 0 and 10. If the number you choose matches one of the random numbers, you win!"
+    text: "あなたは秘密のゲームを見つけます。上の数字を選んでください。0から10までの10個の数字がランダムに選ばれます。選択した数字が乱数の1つと一致すると、あなたの勝ちです!"
   }
 ];
 
