@@ -4,7 +4,7 @@ let gold = 50;
 let currentWeapon = 0;
 let fighting;
 let monsterHealth;
-let inventory = ["stick"];
+let inventory = ["棒"];
 
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector("#button2");
@@ -17,24 +17,24 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 const weapons = [
-  { name: 'stick', power: 5 },
-  { name: 'dagger', power: 30 },
-  { name: 'claw hammer', power: 50 },
-  { name: 'sword', power: 100 }
+  { name: '棒', power: 5 },
+  { name: '短刀', power: 30 },
+  { name: 'クローハンマー', power: 50 },
+  { name: '剣', power: 100 }
 ];
 const monsters = [
   {
-    name: "slime",
+    name: "スライム",
     level: 2,
     health: 15
   },
   {
-    name: "fanged beast",
+    name: "牙獣",
     level: 8,
     health: 60
   },
   {
-    name: "dragon",
+    name: "ドラゴン",
     level: 20,
     health: 300
   }
@@ -125,7 +125,7 @@ function buyHealth() {
     goldText.innerText = gold;
     healthText.innerText = health;
   } else {
-    text.innerText = "You do not have enough gold to buy health.";
+    text.innerText = "体力を買うのに十分なゴールドがありません.";
   }
 }
 
@@ -136,15 +136,15 @@ function buyWeapon() {
       currentWeapon++;
       goldText.innerText = gold;
       let newWeapon = weapons[currentWeapon].name;
-      text.innerText = "You now have a " + newWeapon + ".";
+      text.innerText = " これで、 " + newWeapon + ".";
       inventory.push(newWeapon);
-      text.innerText += " In your inventory you have: " + inventory;
+      text.innerText += " インベントリには次のものがあります。 " + inventory;
     } else {
-      text.innerText = "You do not have enough gold to buy a weapon.";
+      text.innerText = "武器を買うのに十分なゴールドがありません.";
     }
   } else {
-    text.innerText = "You already have the most powerful weapon!";
-    button2.innerText = "Sell weapon for 15 gold";
+    text.innerText = "あなたはすでに最強の武器を持っています!!";
+    button2.innerText = "武器を15ゴールドで売る";
     button2.onclick = sellWeapon;
   }
 }
@@ -154,10 +154,10 @@ function sellWeapon() {
     gold += 15;
     goldText.innerText = gold;
     let currentWeapon = inventory.shift();
-    text.innerText = "You sold a " + currentWeapon + ".";
-    text.innerText += " In your inventory you have: " + inventory;
+    text.innerText = "売りました" + currentWeapon + ".";
+    text.innerText += 　"インベントリには、 " + inventory;
   } else {
-    text.innerText = "Don't sell your only weapon!";
+    text.innerText = "唯一の武器を売るな!";
   }
 }
 
